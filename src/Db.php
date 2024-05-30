@@ -38,7 +38,7 @@ class Db
     private $master_config = [];
     private $slaves_config = [];
 
-    public function __construct(array $master_config = [], array ...$slaves_config)
+    public function __construct(array $master_config = [], ?array ...$slaves_config)
     {
         $this->master_config = $master_config;
         $this->slaves_config = $slaves_config;
