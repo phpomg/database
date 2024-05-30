@@ -1,0 +1,14 @@
+{
+    "name": "phpomg/database",
+    "description": "database",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "catfan/medoo": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPOMG\\Database\\": "src/"
+        }
+    }
+}
