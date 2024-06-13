@@ -84,7 +84,7 @@ class Db
 
     public function __call($name, $arguments)
     {
-        if (in_array($name, ['exec', 'create', 'drop', 'insert', 'update', 'delete', 'replace', 'action'])) {
+        if (in_array($name, ['exec', 'create', 'drop', 'insert', 'update', 'delete', 'replace', 'action', 'id'])) {
             return $this->master()->$name(...$arguments);
         } else {
             return $this->slave()->$name(...$arguments);
