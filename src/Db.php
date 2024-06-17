@@ -48,7 +48,7 @@ class Db
     {
         static $db;
         if (!$db) {
-            $db = $this->getInstance($this->master_config);
+            $db = $this->getMedoo($this->master_config);
         }
         return $db;
     }
@@ -57,12 +57,12 @@ class Db
     {
         static $db;
         if (!$db) {
-            $db = $this->slaves_config ? $this->getInstance(array_rand($this->slaves_config)) : $this->master();
+            $db = $this->slaves_config ? $this->getMedoo(array_rand($this->slaves_config)) : $this->master();
         }
         return $db;
     }
 
-    public function getInstance(array $config = []): Medoo
+    public function getMedoo(array $config = []): Medoo
     {
         return new Medoo(array_merge([
             'database_type' => 'mysql',
